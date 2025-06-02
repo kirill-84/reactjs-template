@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://lobster-perfect-dove.ngrok-free.app",
+  "homepage": "https://kirill-84.github.io/reactjs-template/",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "dev": "vite",
