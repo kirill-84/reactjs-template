@@ -18,6 +18,7 @@ export const routes: Route[] = [
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
+  { path: '/profile', Component: ProfilePage, title: 'Профиль' },
   {
     path: '/ton-connect',
     Component: TONConnectPage,

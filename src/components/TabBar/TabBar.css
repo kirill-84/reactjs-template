@@ -1,0 +1,86 @@
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tgui-surface);
+    border-top: 1px solid var(--tgui-border);
+    padding-left: calc(env(safe-area-inset-left, 0px) + 8px);
+    padding-right: calc(env(safe-area-inset-right, 0px) + 8px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+    padding-top: 8px;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 6px 4px;
+    transition: all 0.2s ease;
+    user-select: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--tgui-text-secondary, #8E8E93);
+    font-size: 10px;
+    box-sizing: border-box;
+    overflow: visible;
+    gap: 4px;
+}
+
+.tab-item svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.tab-item span {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.2;
+    display: block;
+}
+
+.tab-item.active {
+    color: var(--tgui-accent, #007AFF);
+}
+
+.tab-item.active svg {
+    transform: scale(1.1);
+}
+
+.tab-item.active span {
+    font-weight: 600;
+}
+
+/* Индикатор для iOS устройств */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background-color: var(--tgui-text-secondary);
+    border-radius: 2.5px;
+    opacity: 0.2;
+    z-index: 1001;
+}
