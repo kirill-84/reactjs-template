@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { hideBackButton, onBackButtonClick, showBackButton, postEvent } from '@telegram-apps/sdk-react';
-import { type PropsWithChildren, useEffect } from 'react';
+import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { SafeAreaFade } from '@/components/SafeAreaFade/SafeAreaFade';
 import TabBar from '@/components/TabBar/TabBar';
 import './Page.css';
@@ -41,6 +41,7 @@ interface PageProps {
 export function Page({
   children,
   back = true,
+  showTabBar = true,
   showSafeAreaFade = true,
   onBackClick,
 }: PropsWithChildren<PageProps>) {

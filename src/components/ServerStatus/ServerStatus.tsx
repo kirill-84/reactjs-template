@@ -38,7 +38,7 @@ export const ServerStatus: React.FC = () => {
             const data = await response.json();
             setServerInfo({ ...data, endpoint: 'standard' });
         } catch (err) {
-            logger.error('Failed to fetch server info', err);
+            logger.error('Failed to fetch server info!', err);
             setError(err instanceof Error ? err : new Error('Unknown error occurred'));
         } finally {
             setLoading(false);
