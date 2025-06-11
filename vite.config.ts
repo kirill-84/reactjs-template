@@ -40,6 +40,14 @@ export default defineConfig({
     // Exposes your dev server and makes it accessible for the devices in the same network.
     host: true,
     allowedHosts: true,
+    // Проксирование запросов
+    proxy: {
+      '/api': {
+        target: 'https://lobster-perfect-dove.ngrok-free.app',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
 });
 
