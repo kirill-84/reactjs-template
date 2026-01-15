@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { type InitData as TelegramInitDataType } from '@telegram-apps/sdk-react';
+import { type InitData as TelegramInitDataType } from '@tma.js/sdk-react';
 import { supabase } from '../client';
 import { type SupabaseUser, type TelegramUserData } from '../types';
 import { logger } from '../../logger';

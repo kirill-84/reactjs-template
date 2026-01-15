@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
     initDataState as _initDataState,
     useSignal,
-} from '@telegram-apps/sdk-react';
+} from '@tma.js/sdk-react';
 import { Page } from '@/components/Page';
 import { supabase } from '@/lib/supabase/client';
 import { useSupabaseUser } from '@/lib/supabase/hooks/useSupabaseUser';

@@ -14,7 +14,7 @@ export const supabase: SupabaseClient | null = supabaseUrl && supabaseAnonKey
     })
     : null;
 
-// Логгируем информацию о клиенте
+// Логируем информацию о клиенте
 if (supabase) {
     logger.info(`Supabase client initialized with URL: ${supabaseUrl?.substr(0, 30)}...`);
 } else {

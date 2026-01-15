@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { hideBackButton, onBackButtonClick, showBackButton, postEvent } from '@telegram-apps/sdk-react';
+import { postEvent, backButton } from '@tma.js/sdk-react';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { SafeAreaFade } from '@/components/SafeAreaFade/SafeAreaFade';
 import TabBar from '@/components/TabBar/TabBar';
@@ -32,10 +32,6 @@ interface PageProps {
    * True if the page should display the SafeAreaFade at the top.
    */
   showSafeAreaFade?: boolean;
-  /**
-   * Custom back button handler. If not provided, uses navigate(-1).
-   */
-  onBackClick?: () => void;
 }
 
 export function Page({
@@ -43,24 +39,19 @@ export function Page({
   back = true,
   showTabBar = true,
   showSafeAreaFade = true,
-  onBackClick,
 }: PropsWithChildren<PageProps>) {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (back) {
-      showBackButton();
-      return onBackButtonClick(() => {
-        if (onBackClick) {
-          onBackClick();
-        } else {
-          navigate(-1);
-        }
+      backButton.show();
+      return backButton.onClick(() => {
+        navigate(-1);
       });
     }
-    hideBackButton();
-  }, [back, navigate, onBackClick]);
+    backButton.hide();
+  }, [back]);
 
   // Повторно запрашиваем safe area при монтировании страницы
   useEffect(() => {

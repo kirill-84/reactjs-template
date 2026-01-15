@@ -2,7 +2,7 @@ import { FC, useMemo, useState, useEffect } from 'react';
 import {
     initDataState as _initDataState,
     useSignal,
-} from '@telegram-apps/sdk-react';
+} from '@tma.js/sdk-react';
 import { useNavigate } from 'react-router-dom';
 
 import { Page } from '@/components/Page';
